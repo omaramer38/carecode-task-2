@@ -1,0 +1,42 @@
+import json
+
+
+
+test_set = [
+    {
+        "query_id": "Q1",
+        "query": "What are the recommended second-line oral medicines for type 2 diabetes when metformin alone is insufficient?",
+        "expected_pages": [8, 9, 13, 22],
+        "expected_keywords": ["sulfonylurea", "second-line", "metformin", "dipeptidyl peptidase-4"]
+    },
+    {
+        "query_id": "Q2",
+        "query": "When should long-acting insulin analogues be considered over human insulin in patients with diabetes?",
+        "expected_pages": [10, 28, 29],
+        "expected_keywords": ["frequent severe hypoglycaemia", "long-acting insulin analogues", "human insulin"]
+    },
+    {
+        "query_id": "Q3",
+        "query": "What type of insulin is recommended as first choice for controlling blood glucose levels in type 2 diabetes?",
+        "expected_pages": [9, 10, 26, 27],
+        "expected_keywords": ["human insulin", "insulin analogues", "type 2 diabetes"]
+    },
+    {
+        "query_id": "Q4",
+        "query": "What lifestyle modifications are recommended before or during intensifying pharmacological treatment for diabetes?",
+        "expected_pages": [8, 48],
+        "expected_keywords": ["lifestyle modifications", "dietary changes", "weight loss"]
+    },
+    {
+        "query_id": "Q5",
+        "query": "Is SGLT2 inhibitors or DPP-4 inhibitors recommended as second-line therapy according to the guidelines?",
+        "expected_pages": [8, 9, 22, 23],
+        "expected_keywords": ["DPP-4", "SGLT2", "second-line", "sulfonylurea"]
+    }
+]
+
+
+with open("test_set.json", "w", encoding="utf-8") as f:
+    json.dump(test_set, f, ensure_ascii=False, indent=2)
+
+print(" Successfully created 'test_set.json' with 5 benchmark clinical queries!")
